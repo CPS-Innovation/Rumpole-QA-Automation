@@ -1,0 +1,8 @@
+{
+    "authority": "https://login.microsoftonline.com/00dd0d1d-d7e6-4338-ac51-565339c7088c",
+    "clientId": "ed10677c-055c-4b61-894f-265e38079afd",
+    "clientSecret": "0Hu7Q~Uxslw7vDNcA_2OTWSxFQH2Cra3jCLiO",
+    "apiScopes": ["https://graph.windows.net/User.Read"],
+    "username": "AutomationUser.ServiceTeam2@cps.gov.uk",
+    "password": "Loxu8024"
+}

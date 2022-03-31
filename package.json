@@ -1,15 +1,22 @@
 {
-  "name": "rumpoleproject",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "cypress": "^9.3.1"
-  }
+    "name": "rumpoleproject",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "cy:open": "cypress open",
+        "cy:run": "cypress run",
+        "cy:report": "npx xunit-viewer -r report -o report/index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "cypress": "^9.3.1",
+        "jsonwebtoken": "^8.5.1"
+    },
+    "dependencies": {
+        "xunit-viewer": "^7.1.5"
+    }
 }
