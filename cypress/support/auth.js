@@ -2,8 +2,11 @@
 
 import { decode } from "jsonwebtoken";
 
-const { authority, clientId, clientSecret, apiScopes, username, password } =
+const { authority, clientId, clientSecret, apiScope, username, password } =
     Cypress.env();
+
+const apiScopes = [apiScope];
+
 const environment = "login.windows.net";
 
 const buildAccountEntity = (
