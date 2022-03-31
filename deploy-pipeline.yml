@@ -19,8 +19,8 @@ steps:
 
     - task: Npm@1
       env:
-          cypress_clientSecret: "$(cypress_clientSecret)"
-          cypress_password: "$(cypress_password)"
+          CYPRESS_CLIENTSECRET: "$(cypress_clientSecret)"
+          CYPRESS_PASSWORD: "$(cypress_password)"
 
       inputs:
           command: "custom"

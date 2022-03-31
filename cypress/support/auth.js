@@ -2,8 +2,14 @@
 
 import { decode } from "jsonwebtoken";
 
-const { authority, clientId, clientSecret, apiScope, username, password } =
-    Cypress.env();
+const {
+    AUTHORITY: authority,
+    CLIENTID: clientId,
+    CLIENTSECRET: clientSecret,
+    APISCOPE: apiScope,
+    USERNAME: username,
+    PASSWORD: password,
+} = Cypress.env();
 
 const apiScopes = [apiScope];
 
