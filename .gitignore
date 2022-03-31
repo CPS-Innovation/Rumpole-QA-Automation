@@ -119,4 +119,3 @@ dist
 cypress/videos
 cypress/screenshots
 report
-cypress.env.json
