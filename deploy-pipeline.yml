@@ -18,6 +18,10 @@ steps:
       displayName: "npm install"
 
     - task: Npm@1
+      env:
+          cypress_clientSecret: "$(cypress_clientSecret)"
+          cypress_password: "$(cypress_password)"
+
       inputs:
           command: "custom"
           customCommand: "run cy:run"
