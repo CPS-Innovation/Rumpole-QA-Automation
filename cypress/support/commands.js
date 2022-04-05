@@ -24,6 +24,14 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import { login } from "./auth";
+import {
+    authority,
+    clientId,
+    clientSecret,
+    apiScopes,
+    username,
+    password,
+} from "./auth-config";
 
 let cachedTokenExpiryTime = new Date().getTime();
 let cachedTokenResponse = null;
@@ -40,3 +48,25 @@ Cypress.Commands.add("login", () => {
         cachedTokenExpiryTime = new Date().getTime() + 50 * 60 * 1000;
     });
 });
+
+Cypress.Commands.add(
+    "requestToken",
+    {
+        prevSubject: "optional",
+    },
+    (subject) => {
+        return cy.request({
+            url: authority + "/oauth2/v2.0/token",
+            method: "POST",
+            body: {
+                grant_type: "password",
+                client_id: clientId,
+                client_secret: clientSecret,
+                scope: ["openid profile"].concat(apiScopes).join(" "),
+                username,
+                password,
+            },
+            form: true,
+        });
+    }
+);

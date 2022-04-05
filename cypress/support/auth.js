@@ -2,16 +2,7 @@
 
 import { decode } from "jsonwebtoken";
 
-const {
-    AUTHORITY: authority,
-    CLIENTID: clientId,
-    CLIENTSECRET: clientSecret,
-    APISCOPE: apiScope,
-    USERNAME: username,
-    PASSWORD: password,
-} = Cypress.env();
-
-const apiScopes = [apiScope];
+import { clientId, apiScopes } from "./auth-config";
 
 const environment = "login.windows.net";
 
@@ -115,24 +106,10 @@ const injectTokens = (tokenResponse) => {
 
 export const login = (cachedTokenResponse) => {
     let tokenResponse = null;
-    let chainable = cy
-        .visit("/?automation-test-first-visit=true")
-        .log(Cypress.config("baseUrl"));
+    let chainable = cy.visit("/?automation-test-first-visit=true");
 
     if (!cachedTokenResponse) {
-        chainable = chainable.request({
-            url: authority + "/oauth2/v2.0/token",
-            method: "POST",
-            body: {
-                grant_type: "password",
-                client_id: clientId,
-                client_secret: clientSecret,
-                scope: ["openid profile"].concat(apiScopes).join(" "),
-                username: username,
-                password: password,
-            },
-            form: true,
-        });
+        chainable = chainable.requestToken();
     } else {
         chainable = chainable.then(() => {
             return {
@@ -143,7 +120,6 @@ export const login = (cachedTokenResponse) => {
 
     chainable
         .then((response) => {
-            console.log(response);
             injectTokens(response.body);
             tokenResponse = response.body;
         })
