@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://as-web-rumpole-dev.azurewebsites.net/",
+    "baseUrl": "https://as-web-rumpole-qa.azurewebsites.net/",
     "chromeWebSecurity": false,
     "video": false,
     "reporter": "junit",

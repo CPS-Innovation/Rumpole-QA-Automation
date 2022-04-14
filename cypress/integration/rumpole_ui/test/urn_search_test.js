@@ -21,7 +21,7 @@ describe('the app', () => {
   it('Valid Urn Test', () => {
     //Valid URN Test
 
-    cy.visit('/case-search');
+    //cy.visit("/case-search")
     cy.get('.govuk-input').clear(); //clear the text box
     cy.get('.govuk-input').type('13WD1234520'); //input a valid URN
     cy.wait(5000);

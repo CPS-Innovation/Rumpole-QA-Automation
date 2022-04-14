@@ -4,8 +4,6 @@ import LoginPage from "../page-objects/login-page";
 
 describe('Valid Login', function () {
 
-
-
   it('login test', function () {
 
     cy.visit(loginpage.loginUrl)
