@@ -23,10 +23,10 @@ describe('the app', () => {
     cy.contains('Please enter a valid URN'); // verify correct error is displayed
   });
 
-  it.only('Valid Urn Test', () => {
+  it('Valid Urn Test', () => {
     //Valid URN Test
 
-    cy.visit('/');
+    cy.visit(searchPage.visit);
     cy.get(searchPage.searchInput).clear(); //clear the text box
     cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
     cy.get(searchPage.homeSearchButton).click();
@@ -43,8 +43,8 @@ describe('the app', () => {
     cy.get(searchPage.homeSearchButton).click();
     cy.wait(3000);
     cy.contains("We've found"); // verify correct error is displayed
-    cy.get('[data-testid="link-back-link"]').click(); //go back to search page
-    cy.visit('/');
+    cy.get(searchPage.backLinkButtonFirstResult).click(); //go back to search page
+    //cy.visit('/');
     cy.get(searchPage.searchInput).clear(); //clear the text box
     cy.get(searchPage.searchInput).type('19UN8765432'); //input a valid URN
     cy.get(searchPage.homeSearchButton).click();
