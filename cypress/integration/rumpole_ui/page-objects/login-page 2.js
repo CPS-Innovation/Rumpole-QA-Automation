@@ -1,8 +1,20 @@
-class LoginPage{
-  //loginUrl="https://as-web-rumpole-qa.azurewebsites.net/case-search"
-  //loginUrlUat="https://as-web-rumpole-uat.azurewebsites.net/case-search"
-  //title="Find a case"
+// class SearchPage {
+//   title() {
+//       return cy.get('Polaris');
+//   }
+//   getEmail(){
+//       return cy.get('#reg_email');
+//   }
+//   getPassword(){
+//       return cy.get('#reg_password');
+//   }
+//   getLoginUserName(){
+//       return cy.get('#username');
+//   }
+//   getRegisterButton() {
+//       return cy.get('.woocommerce-Button');
+//   }
+//   }
+  
 
-}
-
-export default LoginPage
+// export default SearchPage

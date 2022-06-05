@@ -3,8 +3,12 @@
     "chromeWebSecurity": false,
     "video": false,
     "reporter": "junit",
+    "projectId": "o2rc29",
     "reporterOptions": {
         "mochaFile": "report/test-results-[hash].xml",
         "attachments": true
+         
+    
+       
     }
 }
