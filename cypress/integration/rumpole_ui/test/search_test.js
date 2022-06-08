@@ -6,7 +6,7 @@ const searchPage = new SearchPage();
 describe('the app', () => {
   beforeEach(() => {
     cy.login();
-
+    
     cy.visit('/');
   });
 
@@ -26,7 +26,7 @@ describe('the app', () => {
   it('Valid Urn Test', () => {
     //Valid URN Test
 
-    cy.visit(searchPage.visit);
+    //cy.visit(searchPage.visit);
     cy.get(searchPage.searchInput).clear(); //clear the text box
     cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
     cy.get(searchPage.homeSearchButton).click();
@@ -37,7 +37,7 @@ describe('the app', () => {
   it('Search for multiple URN', () => {
     //Valid URN Test
 
-    cy.visit('/');
+    //cy.visit('/');
     cy.get(searchPage.searchInput).clear(); //clear the text box
     cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
     cy.get(searchPage.homeSearchButton).click();

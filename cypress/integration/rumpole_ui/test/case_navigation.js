@@ -14,14 +14,14 @@ describe('the app', () => {
 it('Navigate back to search screen with hyperlink', () => {
   //Navigate back to search screen
 
-  cy.visit('/');
+  //cy.visit('/');
   cy.get(searchPage.findAcase).should('contain', 'Find a case')
   cy.get(searchPage.searchInput).clear(); //clear the text box
   cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
   cy.get(searchPage.homeSearchButton)
       .should('contain', 'Search') //verify 'Search' Text is on page
   cy.get(searchPage.homeSearchButton).click();
-  cy.wait(3000);
+  cy.wait(6000);
   cy.contains("We've found"); // verify correct error is displayed
   //cy.get('[data-testid="link-back-link"]')
   cy.get(searchPage.backLinkButtonFirstResult).click(); //go back to search page
@@ -34,11 +34,11 @@ it('Navigate back to search screen with hyperlink', () => {
 it('Navigate back with the browser back button', () => {
   //Navigate back to search screen
 
-  cy.visit('/');
+  //cy.visit('/');
   cy.get(searchPage.searchInput).clear(); //clear the text box
   cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
   cy.get(searchPage.homeSearchButton).click();
-  cy.wait(3000);
+  cy.wait(6000);
   cy.contains("We've found"); // verify correct error is displayed
   cy.go('back');
   cy.contains('Privacy');
@@ -50,7 +50,7 @@ it('Navigate back with the browser back button', () => {
 it('Navigate back to result page with browser back button', () => {
   //Navigate back to search screen
   
-  cy.visit('/');
+  //cy.visit('/');
   cy.get(searchPage.searchInput).clear(); //clear the text box
   cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
   cy.get(searchPage.homeSearchButton).click();
@@ -61,10 +61,10 @@ it('Navigate back to result page with browser back button', () => {
 
 });
 
-it.only('Navigate back to result page with hyperlink', () => {
+it('Navigate back to result page with hyperlink', () => {
   //Navigate back to search screen
 
-  cy.visit('/');
+  //cy.visit('/');
   cy.get(searchPage.searchInput).clear(); //clear the text box
   cy.get(searchPage.searchInput).type('13WD1234520'); //input a valid URN
   cy.get(searchPage.homeSearchButton).click();
